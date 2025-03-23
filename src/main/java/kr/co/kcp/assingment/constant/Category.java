@@ -1,5 +1,5 @@
 package kr.co.kcp.assingment.constant;
 
 public enum Category {
-    TOP, OUTER, BOTTOM, INNER
+    TOP, OUTER, BOTTOM, INNER, JEAN
 }

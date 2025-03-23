@@ -7,7 +7,8 @@ import lombok.*;
 import java.math.BigDecimal;
 
 @Entity
-@Getter @Builder
+@Getter
+@Builder
 @NoArgsConstructor @AllArgsConstructor
 @ToString
 public class Product {
@@ -16,15 +17,38 @@ public class Product {
     private Long id;
 
     /** 상품명 **/
-    private String product_name;
+    private String productName;
 
     /** 상품 가격 **/
-    private BigDecimal product_price;
+    private BigDecimal productPrice;
 
     /** 상품 재고량 **/
-    private int product_inventory;
+    private int productInventory;
 
     /** 카테고리 **/
     @Enumerated(EnumType.STRING)
     private Category category;
+
+    public void updateProductName(String newName) {
+        this.productName = newName;
+    }
+
+    public void updateProductPrice(BigDecimal newPrice) {
+        this.productPrice = newPrice;
+    }
+
+    public void updateProductInventory(int newInventory) {
+        this.productInventory = newInventory;
+    }
+
+    public void updateCategory(Category newCategory) {
+        this.category = newCategory;
+    }
+
+    public void updateProduct(Product newProduct) {
+        this.productName = newProduct.getProductName();
+        this.productPrice = newProduct.getProductPrice();
+        this.productInventory = newProduct.getProductInventory();
+        this.category = newProduct.getCategory();
+    }
 }
