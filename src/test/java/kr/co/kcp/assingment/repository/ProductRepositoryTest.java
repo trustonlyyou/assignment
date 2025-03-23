@@ -101,4 +101,27 @@ public class ProductRepositoryTest {
         assertEquals(10, updateProduct.getProductInventory());
         assertEquals(Category.BOTTOM, updateProduct.getCategory());
     }
+
+    @Test
+    @DisplayName("삼품 수량 Down Test")
+    public void decreaseInventoryOfProductByCategoryTest() throws Exception {
+        //given
+        Product product = Product.builder()
+                .productName("PLAC Jean")
+                .productPrice(new BigDecimal(100000))
+                .productInventory(10)
+                .category(Category.BOTTOM)
+                .build();
+
+        productRepository.save(product);
+
+        // when
+        product.decreaseProductInventory(2);
+
+        // then
+        Product decreaseProduct = productRepository.findById(product.getId()).orElseThrow();
+        System.out.println(decreaseProduct.toString());
+
+        assertEquals(8, decreaseProduct.getProductInventory());
+    }
 }

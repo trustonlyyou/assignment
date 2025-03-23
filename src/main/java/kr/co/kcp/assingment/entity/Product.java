@@ -51,4 +51,12 @@ public class Product {
         this.productInventory = newProduct.getProductInventory();
         this.category = newProduct.getCategory();
     }
+
+    public void decreaseProductInventory(int inventory) {
+        if (productInventory - inventory < 0) {
+            throw new IllegalArgumentException("재고 부족");
+        }
+
+        this.productInventory -= inventory;
+    }
 }
