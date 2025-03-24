@@ -1,7 +1,7 @@
-package kr.co.kcp.assingment.entity;
+package kr.co.kcp.assingment.domain.product.entity;
 
 import jakarta.persistence.*;
-import kr.co.kcp.assingment.constant.Category;
+import kr.co.kcp.assingment.common.constant.Category;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 public class Product {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "PRODUCT_ID")
     private Long id;
 
     /** 상품명 **/

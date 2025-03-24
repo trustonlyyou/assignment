@@ -1,7 +1,10 @@
-package kr.co.kcp.assingment.repository;
+package kr.co.kcp.assingment.domain.product.repository;
 
-import kr.co.kcp.assingment.constant.Category;
-import kr.co.kcp.assingment.entity.Product;
+import static org.junit.jupiter.api.Assertions.*;
+
+import kr.co.kcp.assingment.common.constant.Category;
+import kr.co.kcp.assingment.domain.product.entity.Product;
+import kr.co.kcp.assingment.domain.product.repository.ProductRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
